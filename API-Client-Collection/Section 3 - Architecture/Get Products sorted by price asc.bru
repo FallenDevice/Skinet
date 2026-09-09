@@ -5,15 +5,16 @@ meta {
 }
 
 get {
-  url: {{url}}/api/products?sort=priceAsc
+  url: {{url}}/api/products?sort=priceDesc
   body: none
   auth: inherit
 }
 
 params:query {
-  sort: priceAsc
+  sort: priceDesc
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
