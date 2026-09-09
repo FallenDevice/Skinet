@@ -1,0 +1,19 @@
+meta {
+  name: Get Products sorted by price asc
+  type: http
+  seq: 7
+}
+
+get {
+  url: {{url}}/api/products?sort=priceAsc
+  body: none
+  auth: inherit
+}
+
+params:query {
+  sort: priceAsc
+}
+
+settings {
+  encodeUrl: true
+}

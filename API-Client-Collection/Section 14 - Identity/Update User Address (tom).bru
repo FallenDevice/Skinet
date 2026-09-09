@@ -1,0 +1,29 @@
+meta {
+  name: Update User Address (tom)
+  type: http
+  seq: 14
+}
+
+post {
+  url: {{url}}/api/account/address
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "line1": "10 The Street",
+    "city": "New York",
+    "state": "NY",
+    "postalCode": "90250",
+    "country": "US"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

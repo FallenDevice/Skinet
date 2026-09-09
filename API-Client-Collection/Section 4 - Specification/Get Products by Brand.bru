@@ -1,0 +1,19 @@
+meta {
+  name: Get Products by Brand
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{url}}/api/products?brand=React
+  body: none
+  auth: inherit
+}
+
+params:query {
+  brand: React
+}
+
+settings {
+  encodeUrl: true
+}

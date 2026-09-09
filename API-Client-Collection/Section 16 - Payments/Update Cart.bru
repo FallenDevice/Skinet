@@ -1,0 +1,36 @@
+meta {
+  name: Update Cart
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{url}}/api/cart
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "id": "cart1",
+      "items": [
+          {
+              "productId": 17,
+              "productName": "Angular Purple Boots",
+              "price": 1,
+              "quantity": 2,
+              "pictureUrl": "https://localhost:5001/images/products/boot-ang2.png",
+              "brand": "Angular",
+              "type": "Boots"
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

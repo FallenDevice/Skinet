@@ -1,0 +1,30 @@
+meta {
+  name: Default endpoints - login with cookie
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/login?useCookies=true
+  body: json
+  auth: inherit
+}
+
+params:query {
+  useCookies: true
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+  	"email": "test@test.com",
+  	"password": "Pa$$w0rd"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

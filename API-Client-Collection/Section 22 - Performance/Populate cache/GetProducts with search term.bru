@@ -1,0 +1,19 @@
+meta {
+  name: GetProducts with search term
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{url}}/api/products?search=red
+  body: none
+  auth: inherit
+}
+
+params:query {
+  search: red
+}
+
+settings {
+  encodeUrl: true
+}

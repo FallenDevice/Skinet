@@ -1,0 +1,36 @@
+meta {
+  name: Update Cart
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/api/cart
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "id": "cart1",
+      "items": [
+          {
+              "productName": "Angular Blue Boots",
+              "price": 180.00,
+              "pictureUrl": "/images/products/boot-ang1.png",
+              "type": "Boots",
+              "brand": "Angular",
+              "productId": 18,
+              "quantity": 2
+          }
+      ]
+  }
+}
+
+settings {
+  encodeUrl: true
+}

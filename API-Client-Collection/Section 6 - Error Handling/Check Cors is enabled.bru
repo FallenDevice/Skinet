@@ -1,0 +1,26 @@
+meta {
+  name: Check Cors is enabled
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/api/products
+  body: none
+  auth: inherit
+}
+
+headers {
+  Origin: https://localhost:4200
+}
+
+script:post-response {
+  test("CORS header is present", function () {
+      expect(res.getHeaders()).to.have.property("Access-Control-Allow-Origin".toLowerCase());
+      expect(res.getHeader("Access-Control-Allow-Origin")).to.eql("https://localhost:4200");
+  });
+}
+
+settings {
+  encodeUrl: true
+}

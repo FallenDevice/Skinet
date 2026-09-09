@@ -1,0 +1,19 @@
+meta {
+  name: Get Order For User
+  type: http
+  seq: 5
+}
+
+get {
+  url: {{url}}/api/orders/1
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,41 @@
+meta {
+  name: Create order
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/api/orders
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "cartId": "cart1",
+      "deliveryMethodId": 1,
+      "shippingAddress": {
+          "name": "Tom Smith",
+          "city": "New York",
+          "country": "US",
+          "line1": "100 Centre Street",
+          "line2": null,
+          "postalCode": "10013",
+          "state": "NY"
+      },
+      "paymentSummary": {
+          "brand": "Mastercard",
+          "last4": "4444",
+          "expMonth": 12,
+          "expYear": 2024
+      }
+  }
+}
+
+settings {
+  encodeUrl: true
+}

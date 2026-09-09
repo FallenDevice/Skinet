@@ -1,0 +1,28 @@
+meta {
+  name: Update Product
+  type: http
+  seq: 5
+}
+
+put {
+  url: {{url}}/api/products/2
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "id": 2,
+      "name": "{{$randomProduct}} Updated",
+      "description": "{{$randomLoremParagraph}}",
+      "price": {{$randomPrice}},
+      "pictureUrl": "{{$randomImageUrl}}",
+      "type": "Some type",
+      "brand": "Some brand",
+      "quantityInStock": {{$randomInt}}
+  }
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,39 @@
+meta {
+  name: Update Cart - Add payment intent details
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/api/cart
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+      "id": "cart1",
+      "items": [
+          {
+              "productId": 17,
+              "productName": "Angular Purple Boots",
+              "price": 1,
+              "quantity": 10,
+              "pictureUrl": "https://localhost:5001/images/products/boot-ang2.png",
+              "brand": "Angular",
+              "type": "Boots"
+          }
+      ],
+      "deliveryMethodId": null,
+      "clientSecret": "pi_3PeYxIHV9KPhYMym0np8q7R0_secret_dq4NT9Dn3cq3rRHAWQSqnI0w2",
+      "paymentIntentId": "pi_3PeYxIHV9KPhYMym0np8q7R0"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

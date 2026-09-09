@@ -1,0 +1,28 @@
+meta {
+  name: Add Product
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/api/products
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "name": "{{$randomProduct}}",
+      "description": "{{$randomLoremParagraph}}",
+      "price": {{$randomPrice}},
+      "pictureUrl": "{{$randomImageUrl}}",
+      "type": "Some type",
+      "brand": "Some brand",
+      "quantityInStock": {{$randomInt}}
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

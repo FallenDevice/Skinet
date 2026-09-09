@@ -1,0 +1,15 @@
+meta {
+  name: Get Not Found
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/api/buggy/notfound
+  body: none
+  auth: inherit
+}
+
+settings {
+  encodeUrl: true
+}

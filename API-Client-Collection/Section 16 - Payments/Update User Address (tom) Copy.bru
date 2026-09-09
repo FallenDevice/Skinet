@@ -1,0 +1,29 @@
+meta {
+  name: Update User Address (tom) Copy
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{url}}/api/account/address
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "line1": "100 Park Lane",
+    "city": "London",
+    "state": "London",
+    "postalCode": "SW1 1BB",
+    "country": "GB"
+  }
+}
+
+settings {
+  encodeUrl: true
+}

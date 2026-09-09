@@ -1,0 +1,19 @@
+meta {
+  name: Get Cart
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{url}}/api/cart?id=cart1
+  body: none
+  auth: inherit
+}
+
+params:query {
+  id: cart1
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,21 @@
+meta {
+  name: Get Validation Error
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{url}}/api/buggy/validationerror
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "name": ""
+  }
+}
+
+settings {
+  encodeUrl: true
+}

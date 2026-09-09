@@ -1,0 +1,31 @@
+meta {
+  name: Add Product
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{url}}/api/products
+  body: json
+  auth: inherit
+}
+
+headers {
+  X-XSRF-TOKEN: {{xsrfToken}}
+}
+
+body:json {
+  {
+      "name": "{{$randomProduct}}",
+      "description": "{{$randomLoremParagraph}}",
+      "price": {{$randomPrice}},
+      "pictureUrl": "https://picsum.photos/300/300",
+      "type": "Some type",
+      "brand": "Some brand",
+      "quantityInStock": {{$randomInt}}
+  }
+}
+
+settings {
+  encodeUrl: true
+}

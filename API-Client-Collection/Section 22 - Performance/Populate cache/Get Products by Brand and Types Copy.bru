@@ -1,0 +1,20 @@
+meta {
+  name: Get Products by Brand and Types Copy
+  type: http
+  seq: 2
+}
+
+get {
+  url: {{url}}/api/products?brands=Angular,React&types=Boots,Gloves
+  body: none
+  auth: inherit
+}
+
+params:query {
+  brands: Angular,React
+  types: Boots,Gloves
+}
+
+settings {
+  encodeUrl: true
+}

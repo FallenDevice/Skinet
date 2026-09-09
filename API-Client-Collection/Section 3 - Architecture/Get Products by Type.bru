@@ -1,0 +1,19 @@
+meta {
+  name: Get Products by Type
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{url}}/api/products?type=boards
+  body: none
+  auth: inherit
+}
+
+params:query {
+  type: boards
+}
+
+settings {
+  encodeUrl: true
+}
