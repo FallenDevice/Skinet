@@ -16,11 +16,12 @@ headers {
 
 script:post-response {
   test("CORS header is present", function () {
-      expect(res.getHeaders()).to.have.property("Access-Control-Allow-Origin".toLowerCase());
-      expect(res.getHeader("Access-Control-Allow-Origin")).to.eql("https://localhost:4200");
+      expect(res.getHeaders()).to.have.property("access-control-allow-origin".toLowerCase());
+      expect(res.getHeader("access-control-allow-origin")).to.eql("https://localhost:4200");
   });
 }
 
 settings {
   encodeUrl: true
+  timeout: 0
 }
