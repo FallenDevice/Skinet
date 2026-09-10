@@ -28,6 +28,8 @@ namespace Core.Interfaces
 
         bool Exists(int id);
 
+        Task<int> CountAsync(ISpecification<T> spec);
+
     }
     
 }
